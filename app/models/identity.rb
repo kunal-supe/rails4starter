@@ -1,6 +1,4 @@
-class Identity
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Identity < ActiveRecord::Base
 
   belongs_to :user, index: true
 

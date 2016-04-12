@@ -1,9 +1,7 @@
 ### Initial setup
-remove_file 'config/database.yml'
 remove_file 'app/assets/stylesheets/application.css'
 remove_file 'app/controllers/application_controller.rb'
 remove_file 'app/views/layouts/application.html.erb'
-remove_file 'db/seeds.rb'
 environment 'config.action_mailer.default_url_options = {host: "localhost:3000"}', env: 'development'
 
 
@@ -27,8 +25,7 @@ create_file 'Gemfile'
 add_source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem "mongoid", github: "mongoid/mongoid"
-
+gem "pg"
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -72,7 +69,6 @@ gem "hashugar", github: "alex-klepa/hashugar"
 run 'bundle install'
 
 ### Generators
-generate 'mongoid:config'
 generate 'simple_form:install --bootstrap'
 generate 'devise:install'
 generate :controller, "home index"
@@ -82,8 +78,8 @@ route 'resources :users'
 route <<-eos
 
   devise_for :users, controllers: {
-    registrations: "users/registrations", 
-    passwords: "users/passwords", 
+    registrations: "users/registrations",
+    passwords: "users/passwords",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 eos

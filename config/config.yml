@@ -1,9 +1,8 @@
 defaults: &defaults
   roles:
     - admin
-    - moderator
-    - user
-  default_role: user
+    - customer
+  default_role: customer
 
 development:
   <<: *defaults

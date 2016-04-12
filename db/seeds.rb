@@ -8,11 +8,11 @@
 
 admin = User.new(
   email: 'admin@example.com',
-  first_name: 'Sample', 
-  last_name: 'User', 
-  roles: ['admin'], 
-  password: 'administrator',
-  password_confirmation: 'administrator'
+  first_name: 'Sample',
+  last_name: 'User',
+  roles: ['admin'],
+  password: 'password',
+  password_confirmation: 'password'
 )
 admin.skip_confirmation!
 admin.save!

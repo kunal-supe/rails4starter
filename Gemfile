@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "rails", "4.0.0"
-gem "mongoid", github: "mongoid/mongoid"
+gem "pg"
 gem "sass-rails", "~> 4.0.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.0.0"
@@ -29,7 +29,8 @@ group :test do
   gem "database_cleaner"
   gem "rb-inotify", "~> 0.9"
 end
-
+gem 'fastercsv' # Only required on Ruby 1.8 and below
+gem 'rails_admin'
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem "font-awesome-sass-rails"
 gem "simple_form", github: "plataformatec/simple_form"
